@@ -1,11 +1,39 @@
 
-      var targetNumber = Math.floor(Math.random() * 50);
-      var crystal1 = Math.floor(Math.random() * 13);
-      var crystal2 = Math.floor(Math.random() * 13);
-      var crystal3 = Math.floor(Math.random() * 13);
-      var crystal4 = Math.floor(Math.random() * 13);
   
+      var targetNumber;
+      var crystal1;
+      var crystal2;
+      var crystal3;
+      var crystal4;
+      var numberOptions;
+      
+      var counter = 0;
+      var right = 0;
+      var wrong = 0;
+
+      function reset() {
+        counter = 0;
+        
+        targetNumber = Math.floor(Math.random() * 50);
+        crystal1 = Math.floor(Math.random() * 13);
+        crystal2 = Math.floor(Math.random() * 13);
+        crystal3 = Math.floor(Math.random() * 13);
+        crystal4 = Math.floor(Math.random() * 13);
+
+        console.log("crystal1: " + crystal1);
+        console.log("crystal2: " + crystal2);
+        console.log("crystal3: " + crystal3);
+        console.log("crystal4: " + crystal4);
+
+        // We begin by expanding our array to include four options.
+        numberOptions = [crystal1, crystal2, crystal3, crystal4];
+
+        $("#number-to-guess").text(targetNumber);
+      }
+
   var games = {
+
+      
       start: function () {
         // get the 'right' selector. Returns a set of elements found in the DOM 'right'
         this.$right = document.getElementById('right');
@@ -14,25 +42,11 @@
 
         this.$counter = document.getElementById('counter');
 
-        // this.reset();
-
-        console.log("crystal1: " + crystal1);
-        console.log("crystal2: " + crystal2);
-        console.log("crystal3: " + crystal3);
-        console.log("crystal4: " + crystal4);
-
-        $("#number-to-guess").text(targetNumber);
+        reset();
 
       var crystals = $("#crystals");
 
-      var counter = 0;
-      var right = 0;
-      var wrong = 0;
-
       // Now for the hard part. Creating multiple crystals each with their own unique number value.
-
-      // We begin by expanding our array to include four options.
-      var numberOptions = [crystal1, crystal2, crystal3, crystal4];
 
       // Next we create a for loop to create crystals for every numberOption.
       for (var i = 0; i < numberOptions.length; i++) {
@@ -94,29 +108,14 @@
           $("#counter").text(counter);
           console.log("counter: " + counter);
 
-         function reset() {
-            counter = 0;
-            // targetNumber = 0;
-            targetNumber = Math.floor(Math.random() * 50);
-            crystal1 = Math.floor(Math.random() * 13);
-            crystal2 = Math.floor(Math.random() * 13);
-            crystal3 = Math.floor(Math.random() * 13);
-            crystal4 = Math.floor(Math.random() * 13);
-
-            $("#number-to-guess").text(targetNumber);
-          }
         });
       },
-
-      
-
       
   };
 
   $(document).ready(function() {
   
       games.start();
-      
 
   });
 
