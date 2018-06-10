@@ -14,11 +14,11 @@
       function reset() {
         counter = 0;
         
-        targetNumber = Math.floor(Math.random() * 50);
-        crystal1 = Math.floor(Math.random() * 13);
-        crystal2 = Math.floor(Math.random() * 13);
-        crystal3 = Math.floor(Math.random() * 13);
-        crystal4 = Math.floor(Math.random() * 13);
+        targetNumber = Math.ceil((Math.random() *101) + 19);
+        crystal1 = Math.ceil(Math.random() * 12);
+        crystal2 = Math.ceil(Math.random() * 13);
+        crystal3 = Math.ceil(Math.random() * 12);
+        crystal4 = Math.ceil(Math.random() * 12);
 
         console.log("crystal1: " + crystal1);
         console.log("crystal2: " + crystal2);
