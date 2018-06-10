@@ -59,7 +59,7 @@
         imageCrystal.addClass("crystal-image");
 
         // Each imageCrystal will be given a src link to the crystal image
-        imageCrystal.attr("src", "assets/images/" + i +".png");
+        imageCrystal.attr("src", "assets/images/" + i +".PNG");
 
         // Each imageCrystal will be given a data attribute called data-crystalValue.
         // This data attribute will be set equal to the array value.
